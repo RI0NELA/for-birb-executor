@@ -2577,70 +2577,37 @@ function setupAutosave() {
 			});
 
 			
-			monaco.editor.defineTheme('net-theme-dark', {
-				base: 'vs-dark',
-				inherit: true,
-				colors: {
-					"editor.background": '#0E0E0E', //ur background color
-				},
-				rules: [{
-						token: 'global',
-						foreground: '6699cc', // //FFFFFF
-						fontStyle: "bold"
-					},
-					{
-						token: 'keyword',
-						foreground: 'cc99cc',
-						fontStyle: "bold"
-					},
-					{
-						token: 'comment',
-						foreground: '999999'
-					},
-					{
-						token: 'number',
-						foreground: 'f99157'
-					},
-					{
-						token: 'string',
-						foreground: '99CC99'
-					},
-					{
-						token: 'Method',
-						foreground: 'ffa1dc'
-					},
-				]
-			});
+monaco.editor.defineTheme('net-theme-dark', {
+    base: 'vs-dark',
+    inherit: true,
+    rules: [
+        { token: '', foreground: 'D4D4D4', background: '1E1E1E' },
+        { token: 'comment', foreground: '6A9955' },
+        { token: 'string', foreground: 'CE9178' },
+        { token: 'keyword', foreground: '569CD6' },
+        { token: 'number', foreground: 'B5CEA8' },
+        { token: 'delimiter', foreground: 'D4D4D4' },
+        { token: 'type', foreground: '4EC9B0' },
+        // Add more rules as needed
+    ],
+    colors: {
+        'editor.background': '#1e1e1e',
+        'editorLineNumber.foreground': '#858585',
+        'editorCursor.foreground': '#AEAFAD',
+        'editor.selectionBackground': '#264F78',
+        'editor.inactiveSelectionBackground': '#3A3D41',
+        'editor.lineHighlightBackground': '#2A2D2E',
+    }
+});
 
-			editor = monaco.editor.create(document.getElementById('container'), {
-				language: 'lua',
-				theme: "net-theme-dark",
-				acceptSuggestionOnEnter: "smart",
-				cursorSmoothCaretAnimation: true,
-				suggestOnTriggerCharacters: true,
-				suggestSelection: "recentlyUsed",
-				folding: true,
-					dragAndDrop: true,
-					links: false,
-					minimap: {
-						enabled: false,
-					},
-					showFoldingControls: "always",
-					smoothScrolling: true,
-					stopRenderingLineAfter: 6500,
-					cursorBlinking: "smooth",
-					cursorSmoothCaretAnimation: true,
-					foldingHighlight: false,
-					fontLigatures: true,
-					formatOnPaste: true,
-					showDeprecated: true,
-					suggest: {
-						snippetsPreventQuickSuggestions: false,
-					},
-					padding: {
-						top: 24,
-					}
-			});
+editor = monaco.editor.create(document.getElementById('container'), {
+    value: '-- Executor Made By Rionela.',
+    language: 'lua',
+    theme: 'net-theme-dark',
+    automaticLayout: true,
+    minimap: { enabled: false },
+});
+
 
       loadTabs();
       setupAutosave();
