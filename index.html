@@ -2378,7 +2378,7 @@ function loadTabs() {
             addTab(tabData.title, tabData.content, tabData.id);
         });
     } else {
-        addTab('New Tab 1'); 
+        addTab(' 1'); 
     }
 }
 
@@ -2459,7 +2459,7 @@ function loadTabs() {
             newTabButton.className = 'tab new-tab';
             newTabButton.innerHTML = '+';
             newTabButton.onclick = () => {
-                const newTab = addTab('New Tab ' + (tabs.length + 1));
+                const newTab = addTab('Tab ' + (tabs.length + 1));
             };
             return newTabButton;
         }
