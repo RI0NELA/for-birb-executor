@@ -2235,7 +2235,7 @@
           flex-direction: column;
       }
       .tabs-container {
-          background-color: #141414;
+          background-color: #0E0E0E;
           display: flex;
           height: 35px;
           overflow-x: auto;
@@ -2246,7 +2246,7 @@
           display: flex;
           align-items: center;
           padding: 0 15px;
-          background-color: #2d2d2d;
+          background-color: #0E0E0E;
           color: #969696;
           border-right: 1px solid #1e1e1e;
           min-width: 120px;
@@ -2378,7 +2378,7 @@ function loadTabs() {
             addTab(tabData.title, tabData.content, tabData.id);
         });
     } else {
-        addTab('New Tab 1'); 
+        addTab('Tab 1'); 
     }
 }
 
@@ -2459,13 +2459,13 @@ function loadTabs() {
             newTabButton.className = 'tab new-tab';
             newTabButton.innerHTML = '+';
             newTabButton.onclick = () => {
-                const newTab = addTab('New Tab ' + (tabs.length + 1));
+                const newTab = addTab('Tab ' + (tabs.length + 1));
             };
             return newTabButton;
         }
 
         function addTab(title, content = '', id = null) {
-    const defaultText = "--[[\n    Made by Salad\n    discord.gg/getsalad\n ]]";    
+    const defaultText = "--[[\n    Made by Rionela\n    https://discord.gg/sRh9Uv44\n ]]";    
     if (!content) {
         content = defaultText;
     }
@@ -2528,7 +2528,7 @@ function switchTab(tabId) {
             }
         }
         
-        const contentToSet = tab.content.trim() === '' ? "--[[ Made by Salad\n    discord.gg/getsalad\n ]]" : tab.content;        editor.setValue(contentToSet);
+        const contentToSet = tab.content.trim() === '' ? "--[[ Made by Rionela\n    https://discord.gg/sRh9Uv44\n ]]" : tab.content;        editor.setValue(contentToSet);
         tab.element.classList.add('active');
         currentTab = tabId;
     }
@@ -2581,7 +2581,7 @@ function setupAutosave() {
 				base: 'vs-dark',
 				inherit: true,
 				colors: {
-					"editor.background": '#141414', //ur background color
+					"editor.background": '#0E0E0E', //ur background color
 				},
 				rules: [{
 						token: 'global',
