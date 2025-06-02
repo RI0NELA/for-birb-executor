@@ -2466,9 +2466,6 @@ function loadTabs() {
 
 function addTab(title, content = '', id = null) {
     if (tabs.length >= 4) {
-        if (window.csInterop && window.csInterop.ShowTabLimitWarning) {
-            window.csInterop.ShowTabLimitWarning(); // Call C# MessageBox
-        }
         return null;
     }
 
