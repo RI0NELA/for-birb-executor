@@ -2466,8 +2466,10 @@ function loadTabs() {
 
 function addTab(title, content = '', id = null) {
     if (tabs.length >= 4) {
-        alert('Tab limit reached (4 max).');
-        return null; // prevent adding more
+        if (window.csInterop && window.csInterop.ShowTabLimitWarning) {
+            window.csInterop.ShowTabLimitWarning(); // Call C# MessageBox
+        }
+        return null;
     }
 
     const defaultText = "--[[\n    Made by Rionela\n    https://discord.gg/sRh9Uv44\n ]]";    
