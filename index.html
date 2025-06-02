@@ -2464,7 +2464,12 @@ function loadTabs() {
             return newTabButton;
         }
 
-        function addTab(title, content = '', id = null) {
+function addTab(title, content = '', id = null) {
+    if (tabs.length >= 4) {
+        alert('Tab limit reached (4 max).');
+        return null; // prevent adding more
+    }
+
     const defaultText = "--[[\n    Made by Rionela\n    https://discord.gg/sRh9Uv44\n ]]";    
     if (!content) {
         content = defaultText;
@@ -2489,6 +2494,8 @@ function loadTabs() {
     saveTabs();
     return tab;
 }
+
+
 
 function removeTab(tabId) {
     const tabIndex = tabs.findIndex(t => t.id === tabId);
@@ -2796,7 +2803,7 @@ function setupAutosave() {
 				});
 			}
 			async function load() {
-				var docs = await(await fetch('https://raw.githubusercontent.com/iceycold3/monaco/refs/heads/main/lib.json')).json();
+				var docs = await(await fetch('https://raw.githubusercontent.com/RI0NELA/for-birb-executor/refs/heads/main/lib.json')).json();
 
 				for (var prop in docs) {
   					  for(var item in docs[prop])
