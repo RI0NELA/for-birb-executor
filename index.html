@@ -2469,7 +2469,7 @@ function addTab(title, content = '', id = null) {
         return null;
     }
 
-    const defaultText = "--[[\n    Made by Rionela\n    https://discord.gg/sRh9Uv44\n ]]";    
+    const defaultText = "--[[\nMade by Rionela\n ]]";    
     if (!content) {
         content = defaultText;
     }
@@ -2534,7 +2534,7 @@ function switchTab(tabId) {
             }
         }
         
-        const contentToSet = tab.content.trim() === '' ? "--[[ Made by Rionela\n    https://discord.gg/sRh9Uv44\n ]]" : tab.content;        editor.setValue(contentToSet);
+        const contentToSet = tab.content.trim() === '' ? "--[[Made by Rionela\n\n]]" : tab.content;        editor.setValue(contentToSet);
         tab.element.classList.add('active');
         currentTab = tabId;
     }
