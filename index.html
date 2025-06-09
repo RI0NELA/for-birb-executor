@@ -2469,7 +2469,7 @@ function addTab(title, content = '', id = null) {
         return null;
     }
 
-    const defaultText = "--\nMade by Rionela\n";    
+    const defaultText = "--Made by Rionela";    
     if (!content) {
         content = defaultText;
     }
@@ -2534,7 +2534,7 @@ function switchTab(tabId) {
             }
         }
         
-        const contentToSet = tab.content.trim() === '' ? "--Made by Rionela\n\n" : tab.content;        editor.setValue(contentToSet);
+        const contentToSet = tab.content.trim() === '' ? "--Made by Rionela" : tab.content;        editor.setValue(contentToSet);
         tab.element.classList.add('active');
         currentTab = tabId;
     }
