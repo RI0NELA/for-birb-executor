@@ -2469,7 +2469,7 @@ function addTab(title, content = '', id = null) {
         return null;
     }
 
-    const defaultText = "--Made by Rionela";    
+    const defaultText = ""; // put whatever default text you want. i want to put nothing here so its nothing!  
     if (!content) {
         content = defaultText;
     }
@@ -2534,7 +2534,7 @@ function switchTab(tabId) {
             }
         }
         
-        const contentToSet = tab.content.trim() === '' ? "--Made by Rionela" : tab.content;        editor.setValue(contentToSet);
+        const contentToSet = tab.content.trim() === '' ? "" : tab.content;        editor.setValue(contentToSet);
         tab.element.classList.add('active');
         currentTab = tabId;
     }
